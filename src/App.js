@@ -1,53 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
-import React from 'react';
-import { BrowserRouter, Route, NavLink, Switch } from 'react-router-dom';
-import { Menu } from 'semantic-ui-react';
 
-import Demohistory from './components/Demohistory';
-import Demostate from './components/Demostate';
-import Page404 from './components/Page404';
-import Demostatemultiples from './components/Demostatemultiples';
-import DemoUseEffect from './components/DemoUseEffect';
-import DemoUseEffect2 from './components/DemouseEffect2';
-import DemoUseEffect3 from './components/DemouseEffect3';
-import DemouseRef from './components/DemouseRef';
-import DemoHooksPerso from './components/DemoHooksPerso';
+import './App.css';
+import { Fragment } from 'react';
+import { BrowserRouter, Switch, Route, NavLink } from 'react-router-dom';
+import { Menu } from 'semantic-ui-react';
+import Accueil from './Composants/Accueil';
+import Page404 from './Composants/Page404';
+import PartieI from './Composants/PartieI';
+import PartieII from './Composants/PartieII';
+import PartieIII from './Composants/PartieIII';
+
 
 function App() {
   return (
-    <React.Fragment>
+    
+    <Fragment>
       <BrowserRouter>
-      {/* <header> */}
-        <h2 style={ {textAlign:"center"}}>useEffect</h2>
-          <Menu size="large" >
-            <Menu.Item as={NavLink} activeStyle={{ fontWeight: "bold", color:"red"}} to="/" exact={true}>Accueil Demo </Menu.Item> 
-            <Menu.Item as={NavLink} activeStyle={{ fontWeight: "bold", color:"red"}} to="/demohistory">history</Menu.Item>
-            <Menu.Item as={NavLink} activeStyle={{ fontWeight: "bold", color:"red"}} to="/demostate"> state</Menu.Item>
-            <Menu.Item as={NavLink} activeStyle={{ fontWeight: "bold", color:"red"}} to="/demostatemultiples"> stateMultiples</Menu.Item>
-            <Menu.Item as={NavLink} activeStyle={{ fontWeight: "bold", color:"red"}} to="/demoUseEffect"> useEffectOnglet</Menu.Item>
-            <Menu.Item as={NavLink} activeStyle={{ fontWeight: "bold", color:"red"}} to="/demoUseEffect2"> use effect2 </Menu.Item>
-            <Menu.Item as={NavLink} activeStyle={{ fontWeight: "bold", color:"red"}} to="/demoUseEffect3"> use effect3 </Menu.Item>
-            <Menu.Item as={NavLink} activeStyle={{ fontWeight: "bold", color:"red"}} to="/demoUseRef"> useRefFocus </Menu.Item>
-            <Menu.Item as={NavLink} activeStyle={{ fontWeight: "bold", color:"red"}} to="/perso"> Hooks personnalisé </Menu.Item>
-          </Menu>
-        {/* </header> */}
+        <h1 style={{textAlign:"center"}}> PRATIK </h1>
+        <Menu size="large">
+          <Menu.Item as={NavLink} activeStyle={{ color: "brown",  fontWeight: "bold" }} to="/" exact   > Accueil </Menu.Item>
+          <Menu.Item as={NavLink} activeStyle={{ color: "green", fontWeight: "bold" }} to="/partieI"  > PartieI: Liste </Menu.Item>
+          <Menu.Item as={NavLink} activeStyle={{ color: "green", fontWeight: "bold" }} to="/partieII" > PartieII: Couleur </Menu.Item>
+          <Menu.Item as={NavLink} activeStyle={{ color: "green", fontWeight: "bold" }} to="/partieIII"> PartieII: Tableau </Menu.Item>
+        </Menu>
         <Switch>
-          <Route path="/" component={Demohistory} exact={true} />
-          <Route path="/demohistory" component={Demohistory} exact={true} />
-          <Route path="/demostate" component={Demostate} />
-          <Route path="/demostatemultiples" component={Demostatemultiples} />
-          <Route path="/demoUseEffect" component={DemoUseEffect} />
-          <Route path="/demoUseEffect2" component={DemoUseEffect2} />
-          <Route path="/demoUseEffect3" component={DemoUseEffect3} />
-          <Route path="/demoUseRef" component={DemouseRef} />
-          <Route path="/perso" component={DemoHooksPerso} />
-          <Route path="*" component={Page404} />
+          <Route  path="/" component={Accueil} exact  />
+          <Route  path="/partieI" component={PartieI} />
+          <Route  path="/partieII" component={PartieII} />
+          <Route  path="/partieIII" component={PartieIII} />
+          <Route  path="*" component={Page404}   />
         </Switch>
       </BrowserRouter>
-    </React.Fragment>
+    </Fragment>
+
   );
 }
 
 export default App;
-

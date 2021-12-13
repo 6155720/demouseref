@@ -2,18 +2,16 @@
   text-align: center;
 }
 
-body{
-  background-color: rgb(255, 255, 250);
-}
-
-.input1{
-  margin-right:10px;
-}
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
+body{
+  background-color: rgb(255, 255, 251);
+}
+
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
